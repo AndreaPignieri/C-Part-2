@@ -1,0 +1,3 @@
+Usually the conversion does not happen as the function's signature uses the keyword explicit, which means that no conversion
+is automaticly applied by the compilator. Instead, it is the developer's responsibility to convert/promote the objects
+he intends to use for that function. 

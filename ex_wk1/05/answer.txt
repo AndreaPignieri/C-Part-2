@@ -1,0 +1,16 @@
+The function First::fun is called due to the Koenig lookup rule.
+This technicality states that if a function is called without a namespace specification,
+then the argument's namespace is used to determine the function's namespace.
+If the namespace the argument of the function comes from contains a function with that signature, then it is used. 
+
+To call the function contained in the namespace Second, you would have to specify the namespace using Second::fun . 
+
+The existence of Koenig lookup makes the use of the operator<< much easier, as the compiler takes on the responsibility
+to find the correct signature for the operator. Insted of disambiguating by hand everytime, the compiler itself
+uses the arguments to find the correct function to call. This is especially handy while working with user-defined
+types and classes.
+
+By adding a new fun function outside of both the namespaces, we run into a compiler error.
+This is because Koenig lookup only applies in the context of namespaces.
+Once we add an external function, we run into an ambiguity problem once again as the compiler has no way to choose
+which function to use.
