@@ -3,10 +3,10 @@ numbers.hh
 numbers.ih
 operator+.cpp
 operator-.cpp
-operator*.cpp
+operator_mult.cpp
 multiplication.cpp
 operatordiv.cpp
 operator+=.cpp
 operator-=.cpp
-operator*=.cpp
+operator_mult_eq.cpp
 operator_div_eq.cpp
