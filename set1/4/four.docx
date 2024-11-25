@@ -1,16 +1,27 @@
-The issue with the code arises from the following line in the promptGet function:
+The issue with the code arises from the following line in the promptGet 
+function:
+
 return getline(in, str);
-What happens is a return type mismatch, as the getline function returns an input stream reference, not a bool, thus the istream reference cannot be implicitly converted to a bool. To fix the code we can either modify the function body to look like this:
+
+What happens is a return type mismatch, as the getline function returns 
+an input stream reference, not a bool, thus the istream reference cannot 
+be implicitly converted to a bool. To fix the code we can either modify 
+the function body to look like this:
+
 bool promptGet(istream &in, string &str)
 {
     cout << "Enter a line or ^D\n"; // ^D signals end-of-input
     return static_cast<bool>(getline(in, str));
 }
-Like this, the returned istream is converted to a bool, which checks the validity of the stream.
+
+Like this, the returned istream is converted to a bool, which checks 
+the validity of the stream.
 Another option would be to modify the function signature:
+
 istream &promptGet(istream &in, string &str)
 {
     cout << "Enter a line or ^D\n"; // ^D signals end-of-input
     return getline(in, str);
 }
+
 Now, the return type of promptGet is istream&, matching the return type of getline.
