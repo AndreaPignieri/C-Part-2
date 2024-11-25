@@ -1,0 +1,13 @@
+descr.txt
+msg.hh
+msg.ih
+and.cpp
+or.cpp
+xor.cpp
+not.cpp
+equality.cpp
+inequality.cpp
+testNot.cpp
+show.cpp
+main.cpp
+output.txt
