@@ -1,0 +1,2 @@
+purpose of this exercise is to learn to add the index, insertion
+and comparison operator.

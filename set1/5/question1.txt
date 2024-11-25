@@ -1,0 +1,3 @@
+In order to call second fun, we would have to explicitly mention the namespace:
+
+Second::fun( First::Enum );
