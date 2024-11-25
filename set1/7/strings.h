@@ -2,56 +2,29 @@
 #define INCLUDED_STRINGS_
 
 #include <string>
+#include <vector>
 #include <iostream>
-#include <functional>
 
 // Represents a collection of strings
 class Strings
 {
-    size_t d_size = 0;                  // Number of strings
-    std::string *d_str = nullptr;       // Dynamic array of strings
-
-    std::string d_sep = "\n";           // Default separator
-    std::function<void(std::ostream &, Strings const &, size_t)> d_manip =
-        &Strings::stdInsertion;         // Manipulator for formatted output
+    std::string *d_str = nullptr;  // Pointer to the array of strings
+    size_t d_size = 0;             // Number of strings
 
 public:
-    // Constructors
     Strings() = default;
-    Strings(int argc, char **argv);    // Initialize from command-line arguments
-    Strings(char **environLike);       // Initialize from environment-like array
+    Strings(int argc, char **argv); // From strings2_1.cc
+    Strings(char **environLike);    // From strings2_2.cc
 
-    // Rule of five
-    Strings(Strings const &other);     // Copy constructor
-    Strings(Strings &&tmp) noexcept;  // Move constructor
-    ~Strings();                        // Destructor
+    ~Strings();                     // From strings2_3.cc
 
-    Strings &operator=(Strings const &rhs); // Copy assignment operator
-    Strings &operator=(Strings &&rhs) noexcept; // Move assignment operator
+    Strings &operator=(Strings const &rhs); // From strings2_4.cc
 
-    // Utility functions
-    void swap(Strings &other);              // Swap contents with another object
-    size_t size() const;                    // Get the number of strings
-    std::string const &at(size_t idx) const; // Access string at index (const)
-    std::string &at(size_t idx);            // Access string at index (non-const)
-    void add(std::string const &next);      // Add a new string to the collection
+    void add(std::string const &next); // From strings2_5.cc
 
-    // Pseudo-manipulators
-    Strings const &operator()(char const *separator); // Set separator
-    Strings const &operator()(void (*manip)(std::ostream &, Strings const &, size_t)); // Set manipulator
-
-    // Insertion operator
-    friend std::ostream &operator<<(std::ostream &out, Strings const &strings);
-
-private:
-    // Internal helper functions
-    std::ostream &insertInto(std::ostream &out) const; // Insert strings into stream
-
-    // Default insertion behavior
-    static void stdInsertion(std::ostream &out, Strings const &strings, size_t idx);
-
-    // Example custom manipulator
-    static void only2(std::ostream &out, Strings const &strings, size_t idx);
+    size_t size() const;              // From strings2_6.cc
+    std::string const &at(size_t idx) const; // From strings2_7.cc
+    std::string &at(size_t idx);      // From strings2_8.cc
 };
 
 #endif // INCLUDED_STRINGS_
