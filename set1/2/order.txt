@@ -1,0 +1,12 @@
+descr.txt
+numbers.hh
+numbers.ih
+operator+.cpp
+operator-.cpp
+operator*.cpp
+multiplication.cpp
+operatordiv.cpp
+operator+=.cpp
+operator-=.cpp
+operator*=.cpp
+operator_div_eq.cpp
