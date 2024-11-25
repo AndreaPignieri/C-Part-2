@@ -1,0 +1,18 @@
+strings.h         # Public header file
+strings.ih        # Internal header file
+strings3_1.cc     # Copy constructor
+strings3_2.cc     # Move constructor
+strings3_3.cc     # Destructor
+strings3_4.cc     # Copy assignment operator
+strings3_5.cc     # Move assignment operator
+strings3_6.cc     # Operator+=
+strings3_7.cc     # Size getter
+strings3_8.cc     # Swap function
+strings3_9.cc     # Const index operator
+strings3_10.cc    # Non-const index operator
+strings3_11.cc    # Copy-on-write logic
+strings3_12.cc    # Allocate function
+strings3_13.cc    # Proxy constructor
+strings3_14.cc    # Proxy assignment operator
+strings3_15.cc    # Proxy conversion operator
+strings3_16.cc    # Proxy insertion operator
