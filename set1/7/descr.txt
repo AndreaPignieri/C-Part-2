@@ -1,0 +1,1 @@
+The purpose of this exercise is to add Pseudo manipulators in the class strings
