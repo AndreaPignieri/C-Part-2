@@ -43,7 +43,7 @@ class Numbers
     
     private:
         size_t compare(Numbers const &rhs) const;
-        int &indicator(size_t index) const;
+        int &indicator(size_t index) const;    //called by index operators
         // support members for this class, if any
 };
 
