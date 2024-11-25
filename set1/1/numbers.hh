@@ -10,6 +10,8 @@ class Numbers
     friend std::ostream &operator<<(std::ostream &out, Numbers const &numbers);
     friend bool operator==(Numbers const &lhs, Numbers const &rhs);
     friend std::strong_ordering operator<=>(Numbers const &rhs, Numbers const &lhs);
+    //friend functions because the object is not the first mentioned
+
     size_t d_size = 0;
     int *d_nums = 0;
 
