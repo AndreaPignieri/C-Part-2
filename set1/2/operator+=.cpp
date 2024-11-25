@@ -2,8 +2,8 @@
 
 Numbers &Numbers::operator+=(Numbers const &other)
 {
-    Numbers tmp( *this );
-    tmp = tmp + other;
-    swap(tmp);
-    return *this;
+    Numbers tmp( *this );  //copy of this
+    tmp = tmp + other;   //use operator+
+    swap(tmp);          //no throwing here
+    return *this;      
 }
