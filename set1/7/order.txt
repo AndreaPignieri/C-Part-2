@@ -1,3 +1,4 @@
+descr.txt
 strings.h         # Public header file
 strings.ih        # Internal header file
 strings2_1.cc     # Constructor (from argc, argv)
