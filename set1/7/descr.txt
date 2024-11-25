@@ -1,1 +1,6 @@
-The purpose of this exercise is to add Pseudo manipulators in the class strings
+This program implements a basic Strings class, which stores a dynamic collection of strings. It provides functions to:
+Initialize the collection from command-line arguments or an environment-like array.
+Add new strings to the collection.
+Access individual strings with bounds checking.
+
+The program handles dynamic memory allocation and deallocation to avoid memory leaks. The implementation supports accessing and modifying strings by index, with distinct functions for const and non-const access. The focus is on simplicity and correctness without advanced features like reference counting or copy-on-write.
