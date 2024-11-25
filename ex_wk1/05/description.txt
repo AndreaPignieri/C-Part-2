@@ -1,0 +1,1 @@
+Exercise: define two namespaces containing the declaration of the same function. Call such function from main and observe and explain the program's behaviour. Create a new function and compile again, explain what happens. 
