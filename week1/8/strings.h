@@ -6,6 +6,7 @@
 #include <iostream>
 #include <memory> // For std::shared_ptr
 
+// Represents a collection of strings with reference counting and copy-on-write
 class Strings
 {
     class Proxy; // Forward declaration of Proxy
@@ -46,8 +47,8 @@ private:
 // Nested Proxy class
 class Strings::Proxy
 {
-    Strings *d_owner;
-    size_t d_index;
+    Strings *d_owner; // Owning Strings object
+    size_t d_index;   // Index in the Strings object
 
 public:
     Proxy(Strings *owner, size_t index);
@@ -57,4 +58,4 @@ public:
     friend std::ostream &operator<<(std::ostream &out, Proxy const &proxy);
 };
 
-#endif
+#endif // INCLUDED_STRINGS_
