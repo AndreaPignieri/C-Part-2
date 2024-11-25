@@ -1,6 +1,8 @@
 descr.txt
 strings.h         # Public header file
 strings.ih        # Internal header file
+strings2_1.cc
+strings2_2.cc
 strings3_1.cc     # Copy constructor
 strings3_2.cc     # Move constructor
 strings3_3.cc     # Destructor
