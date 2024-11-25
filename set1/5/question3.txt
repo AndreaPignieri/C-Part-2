@@ -1,4 +1,0 @@
-If another global function fun( First::Enum symbol) is declared then when 
-fun(First::Enum) is called the global fun qualifies as a potential function, 
-but also because of the Koening lookup the First::fun also qualifies by the 
-compiler. Creating an ambiguity error.

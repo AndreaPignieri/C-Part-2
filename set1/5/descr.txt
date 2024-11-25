@@ -1,2 +1,0 @@
-This exercise is dealing with the Koenig lookup and how functions 
-are selected by namespaces.
