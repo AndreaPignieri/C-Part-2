@@ -1,0 +1,4 @@
+This program implements a Strings class, which represents a collection of dynamically allocated strings with support for copy-on-write semantics.
+When two Strings objects share the same data, modifications by one object automatically trigger a deep copy, ensuring data integrity. The program supports adding strings,
+accessing individual strings via index operators, and managing resources efficiently using reference counting.
+The Proxy class is used for non-const access to elements, enabling safe modifications to shared data. The program ensures memory safety and avoids unnecessary copies unless explicitly required.
