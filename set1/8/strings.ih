@@ -1,0 +1,9 @@
+#ifndef INCLUDED_STRINGS_IH_
+#define INCLUDED_STRINGS_IH_
+
+#include "strings.h"
+
+// Function declarations for all internal components of the Strings class.
+// Each function's implementation resides in its corresponding .cc file.
+
+#endif // INCLUDED_STRINGS_IH_
