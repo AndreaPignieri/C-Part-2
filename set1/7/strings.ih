@@ -1,0 +1,6 @@
+#ifndef INCLUDED_STRINGS_IH_
+#define INCLUDED_STRINGS_IH_
+
+#include "strings.h"
+
+#endif // INCLUDED_STRINGS_IH_
