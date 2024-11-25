@@ -16,8 +16,8 @@ class Strings
 
 public:
     Strings() = default;
-    Strings(int argc, char **argv);      // From strings3_1.cc
-    Strings(char **environLike);         // From strings3_2.cc
+    Strings(int argc, char **argv);      // From strings2_1.cc
+    Strings(char **environLike);         // From strings2_2.cc
     Strings(Strings const &other);       // From strings3_1.cc
     Strings(Strings &&tmp) noexcept;    // From strings3_2.cc
     ~Strings();                         // From strings3_3.cc
