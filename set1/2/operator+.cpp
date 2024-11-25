@@ -3,7 +3,7 @@
 Numbers Numbers::operator+(Numbers const &other)
 {
     Numbers tmp( d_size );
-    if (d_size != other.d_size)
+    if (d_size != other.d_size)    //only add same sized objects
     {
         cerr << "Numbers of different size cannot be added together";
         return *this;
