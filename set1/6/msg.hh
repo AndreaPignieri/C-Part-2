@@ -18,10 +18,10 @@ enum class Msg
 Msg operator&(Msg lhs, Msg rhs);    // and
 Msg operator|(Msg lhs, Msg rhs);     // or
 Msg operator^(Msg lhs, Msg rhs);    // xor
-Msg operator~(Msg rhs);            // not
+Msg operator~(Msg rhs);            // not bitwise
 bool operator==(Msg lhs, Msg rhs);   //equality test
 bool operator!=(Msg lhs, Msg rhs);   // inequality test
-bool operator!(Msg rhs);
+bool operator!(Msg rhs);             // not operator
 void show(Msg msg);
 
 
