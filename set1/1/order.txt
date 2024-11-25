@@ -1,0 +1,7 @@
+descr.txt
+numbers.hh
+numbers.ih
+equality.cpp
+operatorComp.cpp
+compare.cpp
+outs.cpp
