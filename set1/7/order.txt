@@ -1,0 +1,10 @@
+strings.h         # Public header file
+strings.ih        # Internal header file
+strings2_1.cc     # Constructor (from argc, argv)
+strings2_2.cc     # Constructor (from environ-like array)
+strings2_3.cc     # Destructor
+strings2_4.cc     # Copy assignment operator
+strings2_5.cc     # Add function
+strings2_6.cc     # Size function
+strings2_7.cc     # Const accessor
+strings2_8.cc     # Non-const accessor
