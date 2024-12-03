@@ -1,0 +1,31 @@
+The exit(3) function in C++ terminates a program immediately, bypassing the normal program termination process, including the destruction of objects, cleanup of resources, and unwinding of the stack. This can lead to resource leaks and undefined behavior, especially in modern C++ programs that rely on RAII (Resource Acquisition Is Initialization) for managing resources.
+exit(3) skips stack unwinding, meaning destructors for local objects and automatic cleanup mechanisms are not called. This can result in memory leaks, open file descriptors, and other unfreed resources. If objects hold state or need to be properly released, exit(3) can leave the program in an inconsistent state. Moreover, exit(3) provides no opportunity for the program to handle cleanup gracefully, such as freeing dynamically allocated memory or closing sockets.
+A better alternative would be exceptions, as they allow stack unwinding, ensuring that destructors are called and resources are released. Moreover, they allow for controlled error propagation and handling without abruptly terminating the program.
+Problematic example:
+#include <iostream>
+#include <fstream>
+
+class Resource
+{
+public:
+    Resource() { std::cout << "Resource acquired\n"; }
+    ~Resource() { std::cout << "Resource released\n"; }
+};
+
+void riskyFunction()
+{
+    Resource res;
+    std::cout << "Doing risky work\n";
+    exit(3); // Exits immediately, destructor for `res` is not called
+}
+
+int main()
+{
+    riskyFunction();
+    std::cout << "Program continues\n"; // This line will never be executed
+}
+Output:
+Resource acquired
+Doing risky work
+The destructor (~Resource) is not called, so the resource is leaked.
+Any cleanup code in the main function or elsewhere is skipped.
