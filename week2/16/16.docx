@@ -1,0 +1,24 @@
+The default constructor initializes d_str using the rawPointers function, which presumably allocates memory for the std::string** pointer array. However, if an exception is thrown (e.g., during memory allocation in rawPointers or in the std::string constructors), the destructor of Strings will not be called because the object is not fully constructed.
+Thus, the default constructor is not exception safe, as it might leak memory if an exception is thrown during the initialization.
+To make the constructor exception safe, you can use smart pointers (e.g., std::unique_ptr) to ensure that allocated resources are automatically freed if an exception occurs. Here's how the updated code might look:
+#include <memory>  // for std::unique_ptr
+
+Strings::Strings()
+:
+    d_str(nullptr)  // Initialize d_str to null for safety
+{
+    try
+    {
+        d_str = rawPointers(1);  // Assume rawPointers allocates and initializes memory
+    }
+    catch (...)
+    {
+        // Handle any exception if needed (e.g., log the error)
+        d_str = nullptr;  // Ensure d_str does not point to invalid memory
+        throw;  // Re-throw the exception after cleanup
+    }
+}
+If the default constructor fails and throws an exception, then the memory allocated by rawPointers(1) (or equivalent) will be leaked if not properly managed and any constructor delegation that depends on this constructor will also fail, as the object will never be fully constructed.
+With the updated exception-safe version, any allocated memory is automatically cleaned up, and exceptions are propagated without leaks.
+If another constructor calls the default constructor via delegation and throws an exception after the delegated constructor completes successfully, then, with the updated exception-safe version, all resources allocated in the delegated constructor will be properly cleaned up. If the delegated constructor (default constructor) does not properly manage memory (as in the original version), resources may be leaked.
+
