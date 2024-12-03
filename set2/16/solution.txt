@@ -1,1 +1,51 @@
+The implementation of the default constructor is not exception safe. The
+constructor calls the function rawPointers which dynamically allocates memory 
+and could throw an exception of bad allocation.
+_______________________________________________________________________________
+
+#include "strings.ih"
+    
+Strings::Strings()
+try 
+:
+    d_str(0)
+{
+    try
+    {
+        d_str = rawPointers(1);
+    }
+
+    catch (...)
+    {
+        delete[] d_str; //null ptr can be deleted too
+        throw;
+    }
+}
+
+catch (...)
+{
+    cerr << "Object of type Strings could not be constructed\n"; 
+}
+
+_______________________________________________________________________________
+
+
+What happens if:
+
+-The default constructor fails and throws an exception:
+
+The exception will be caught by the catch clause of the default constructor's
+try function. Then the constructor calling the default one, will continue and 
+construct the object. (In that case we need to make sure that the members whose
+memory was freed are reassigned to new allocated memory, so that there is no
+problem when the object's destructor is called. Alternatively, we could 
+implement the default constructor as a private function member that rethrows any
+exception, preventing the object being constructed and causing problems with the
+destructor.)
+
+
+-The constructor calling the default constructor using constructor delegation 
+fails and throws an exception:
+
+The object is fully constructed, because the default constructor was completed.
 
