@@ -1,1 +1,2 @@
 The purpose of this exercise is to understand when we create copies by using the throw command.
+We use some code to demonstrate the different occurancies.
