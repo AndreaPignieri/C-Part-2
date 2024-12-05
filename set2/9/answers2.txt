@@ -1,0 +1,6 @@
+We are asked to modify the constructor so that the destructor is called and 
+explain why. By moving the "throw" statement into the try block the 
+exception can be caught within the class constructor and not the main 
+function, meaning the flow isnt interupted and the destructor may be 
+run. 
+We are asked to provide the altered class:

@@ -1,0 +1,48 @@
+The output from "outofscope.cc" shows:
+
+Temp file exists:"/tmp/XXXXXXXX.tmp"
+File exists out of scope:0
+
+This demonstrates that the object does remove its file from the filesystem
+when it goes out of scope.
+
+The output from "throwexc.cc" shows:
+
+Temp file exists:"/tmp/XXXXXXXX.tmp"
+Unrelated exception.
+File exists out of scope:0
+
+This demonstrates that when an unexpected exception is thrown, it still 
+doesn't leak files, provided the exception is caught somewhere.
+
+The output from "dontcatch.cc" shows:
+
+Temp file exists:"/tmp/XXXXXXXX.tmp"
+terminate called after throwing an instance of 'std::runtime_error'
+  what():  Unrelated exception.
+Aborted (core dumped)
+
+Checking /tmp directory to see if the file persists after runtime by entering
+ls/tmp gives:
+
+snap-private-tmp
+systemd-private-279b801658a042e0bdf2ac6420cdb804-bluetooth.service-CSqbYj
+systemd-private-279b801658a042e0bdf2ac6420cdb804-colord.service-twN4Dy
+systemd-private-279b801658a042e0bdf2ac6420cdb804-fwupd.service-mu3kph
+systemd-private-279b801658a042e0bdf2ac6420cdb804-ModemManager.service-DQ8Wqf
+systemd-private-279b801658a042e0bdf2ac6420cdb804-polkit.service-OWI2Vr
+systemd-private-279b801658a042e0bdf2ac6420cdb804-power-profiles-daemon.service-iIKKmV
+systemd-private-279b801658a042e0bdf2ac6420cdb804-switcheroo-control.service-M2AAzK
+systemd-private-279b801658a042e0bdf2ac6420cdb804-systemd-logind.service-fyrbgG
+systemd-private-279b801658a042e0bdf2ac6420cdb804-systemd-oomd.service-ElEsBB
+systemd-private-279b801658a042e0bdf2ac6420cdb804-systemd-resolved.service-fmJChp
+systemd-private-279b801658a042e0bdf2ac6420cdb804-systemd-timesyncd.service-waKHcz
+systemd-private-279b801658a042e0bdf2ac6420cdb804-upower.service-zYp1Yq
+XXXXXXXX.tmp
+
+Noticing the last line we see our temp file survives when the exception is not caught.
+This demonstrates that if the exception is not caught by the programmer, the destructor
+is not called.
+
+* Add the option to convert object to fstream and show that the 
+  file wont leak even if an exception is not caught.

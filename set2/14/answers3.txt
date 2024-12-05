@@ -1,0 +1,28 @@
+The output from "dontcatch2.cc" shows the same as
+"dontcatch.cc" however when we examine the file directory
+"XXXXXXXX.tmp" is not there. This shows that even if
+the programmer does not catch the exception, an fstream wont
+leak a file into the system.
+
+*What is your rule of thumb for writing or not writing
+ catch clauses in your programs?
+ 
+We use the 1:1 rule, i.e. for every try block there should
+be a 1:1 correspondence between a potential failure of the
+code or exception and a meaningful, specified recovery 
+action. If there is no meaningful recovery action then
+the exception should be dealt with at a more general level
+with a cath (...).
+
+*What is your rule of thumb for pointers-to-dynamically
+ -allocated-memory and other variables that hold acquired 
+ resources?
+ 
+The rule we try to follow for this is to avoid global variables
+for resource management wherever possible. Using local variables
+restricts the lifetime of allocated memory to the smallest
+necessary range and allows for easier cleanup. As for using
+class data members, we do this when the resource is that 
+class's responsibility and the memory can be cleaned by the 
+class or destructor.
+

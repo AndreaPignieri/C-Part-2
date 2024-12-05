@@ -1,0 +1,11 @@
+answers1.txt
+tempfile/tempfile.h
+tempfile/tempfile.ih
+tempfile/construct.cc
+tempfile/destruct.cc
+outofscope.cc
+throwexc.cc
+dontcatch.cc
+answers.txt
+dontcatch2.cc
+answers3.txt

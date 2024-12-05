@@ -1,0 +1,4 @@
+When exactly is the destructor called?
+
+The destructor is called immediately after the thrown exception is caught
+and the catch statement is run.

@@ -1,0 +1,11 @@
+Exercise 14
+
+Complete the incomplete class TempFIle which represents a temporary file.
+Use the class along with implemented programs to demonstrate the following:
+* A local TempFile removes itself from the filesystem when it goes
+  out of scope.
+* When an unrelated exception is thrown and caught, files arent leaked.
+* If the exception is not caught then the destructor is not called.
+(Note later on in the question the additional option of converting
+ to an fstream object is implemented, this is included in the class here)
+ 

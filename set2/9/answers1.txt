@@ -1,0 +1,13 @@
+We are asked to design a (very) basic class "Demo" with a constructor that 
+does the following: takes an int as parameter, throw the parameters value,
+feature a try block showing the value. The destructor should output text
+when called. We are asked to submit the output and explain.
+
+Output:
+
+main
+
+
+The destructor is not called here. The exception is thrown before the
+constructor has finished and is caught in the main function which outputs
+the line "main\n" and then terminates, thus the destructor is never called.
