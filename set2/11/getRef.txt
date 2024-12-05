@@ -1,0 +1,5 @@
+copy of object (0) created
+this is version (1)
+
+So we can see that when the reference of the thrown object is used only one
+copy is created.
