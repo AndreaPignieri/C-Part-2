@@ -1,0 +1,6 @@
+copy of object (0) created
+we are about to rethrow
+this is version (1)
+
+As we can see the only copy created was for the initial throw.
+So when using throw; we throw the already thrown object and not a copy of it.
