@@ -12,7 +12,7 @@ try
         throw object;
     }
     
-    catch(Num object)
+    catch(Num &object)
     {
         cerr << "we are about to rethrow\n";
         throw;
