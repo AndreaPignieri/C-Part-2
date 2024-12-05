@@ -1,3 +1,6 @@
 copy of object (0) created
 copy of object (1) created
 this is version (2)
+
+Without using a reference two copies are created, one copy in order to throw
+and another copy from the thrown to use in the catch clause.
