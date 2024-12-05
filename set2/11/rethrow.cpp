@@ -19,7 +19,7 @@ try
     }
 }
 
-catch(Num object)
+catch(Num &object)
 {
     cerr << "this is version (" << object.get() << ")\n";
 }
