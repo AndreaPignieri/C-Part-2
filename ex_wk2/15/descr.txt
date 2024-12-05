@@ -1,0 +1,1 @@
+Purpose of this exercise: understand why exit(3) must be avoided.

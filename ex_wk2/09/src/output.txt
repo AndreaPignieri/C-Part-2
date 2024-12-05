@@ -1,0 +1,2 @@
+Constructor of demo with argument: 1
+Destructor of demo
