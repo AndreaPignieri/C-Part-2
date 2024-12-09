@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+// Base class definition
+class Base {
+public:
+    virtual void hello() const {  // Use virtual for polymorphism
+        cout << "Hello from Base!" << endl;
+    }
+};
+
+// Derived class definition
+class Derived : public Base {
+public:
+    void hello() const override {  // Override the base class method
+        cout << "Hello from Derived!" << endl;
+    }
+};
+
+// Function taking a Base reference
+void caller(Base &obj) {
+    obj.hello();  // Calls Base::hello or Derived::hello depending on dynamic type
+}
+
+int main() {
+    Derived d;
+    caller(d);  // Pass Derived as Base reference
+    return 0;
+}
+If Base::hello() is not virtual, calling caller(d) will invoke Base::hello(), because the function is resolved based on the static type of the reference (Base& obj). Otherwise, calling caller(d) will invoke Derived::hello() due to dynamic dispatch enabled by the virtual keyword.
+This is bad practice without using virtual because Derived::hello() will not be called, even though the actual object is of type Derived. This is counterintuitive and can cause unexpected behavior. The intent of using a base class reference (Base &obj) is to enable polymorphism. If the base class lacks virtual methods, the derived class's behavior cannot be accessed through the base reference. Moreover, If someone later adds a Derived class expecting polymorphic behavior but forgets to mark Base::hello() as virtual, the system will silently fail. Therefore, always declare base class methods that are intended to be overridden as virtual. If polymorphism is not needed, avoid passing references to base classes.
+
