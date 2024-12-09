@@ -1,0 +1,21 @@
+*Show what happens if you call each of Derived's constructors, explain.
+
+The output from running main.cc is as follows
+
+Output:
+
+Calling Derived Default:
+Base: Default Constructor.
+Calling Derived Copy:
+Base: Default Constructor.
+Calling Derived Move:
+Base: Default Constructor.
+
+
+Clearly the default Base constructor is called everytime a Derived
+constructor is called. This is as expected, unless explicitly stated,
+when inherited class objects are constructed the default base 
+constructor is called first and the derived constructor is called 
+after.
+
+
