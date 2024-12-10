@@ -1,0 +1,15 @@
+Exercise 19
+*Explain why, when Derived is derived from Base the Base class is constructed
+ first before the Derived class and the Base class is destroyed only after
+ the Derived class.
+
+Since the Derived class inherits from the Base class, the compiler
+constructs Base first as the Derived class may rely on objects constructed
+from Base. Not doing so could lead to undefined behavior. Similarly, the
+compiler destructs the Derived class first as the Base class may contain
+data or functions that Derived needs to properly cleanup.
+
+*Provide a small example that would completely fail if the order were
+ reversed.
+
+

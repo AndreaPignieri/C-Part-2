@@ -1,0 +1,17 @@
+In the example the main function creates a Derived object called derived, this
+is where the constructor is called, then main goes out out of scope and the
+destructor is called. Derived inherits from Base, this is the same as
+everything under public in Base being written in Derived as well thus constructing
+Derived before Base would be like constructing an incomplete class missing
+any functionallity shared with Base leading to undefined behavior. If 
+Base is destructed before Derived this would be like removing any shared 
+functionallity from Derived before calling the destructor causing undefifined
+behavior.
+
+*Explain why code using explicit destructor calls for objects of a derived class
+ doesnt have to explicitly call Base class's destructor.
+ 
+The compiler always envokes the base class Destructor after the Derived class's
+destructor has been called even if the Derived class's is explicitly destroyed.
+In the context of using placement new it is important for the compiler to do
+this as it ensures the cleanup of pre-allocated memory.
