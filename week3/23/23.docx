@@ -1,13 +1,20 @@
-When inheriting with: “class OpusMagnum: private WIP”, the following issues arise:
-Inheritance creates tight coupling because OpusMagnum is directly tied to the implementation of WIP. If WIP changes its internal structure or data members in future releases, OpusMagnum may break or require refactoring. Since OpusMagnum depends on WIP’s private members and methods, any update in WIP can unexpectedly impact OpusMagnum. Moreover, inheritance exposes unnecessary details of WIP to OpusMagnum, violating encapsulation.
-When inheriting with:
+-When inheriting with: “class OpusMagnum: private WIP”, the following issues arise:
+Inheritance creates tight coupling because OpusMagnum is directly tied to the implementation of WIP. 
+If WIP changes its internal structure or data members in future releases, OpusMagnum may break or require refactoring. 
+Since OpusMagnum depends on WIP’s members and methods, any update in WIP can unexpectedly impact OpusMagnum. 
+Moreover, inheritance exposes unnecessary details of WIP to OpusMagnum, violating encapsulation.
+
+-When composing with:
 class OpusMagnum
 {
     WIP d_wip;
     ...
 };
 The following issues arise:
-If WIP changes its internal members or methods, OpusMagnum might still break if it relies on specific functionality that changes. OpusMagnum depends directly on a concrete type WIP, meaning it cannot easily switch to another implementation if WIP is updated or replaced.
+If WIP changes its internal members or methods, OpusMagnum might still break if it relies on specific functionality that changes.
+OpusMagnum depends directly on a concrete type WIP, meaning it cannot easily switch to another implementation if WIP is updated or replaced.
+
+
 To make the implementation as flexible as possible, we consider using an abstract interface like this: 
 class IWIP  // Abstract interface
 {
