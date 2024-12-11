@@ -1,0 +1,7 @@
+-When inheriting with: “class OpusMagnum: private WIP”, the following issues arise:
+Inheritance creates tight coupling because OpusMagnum is directly tied to the implementation of WIP. 
+If WIP changes its internal structure or data members in future releases, OpusMagnum may break or require refactoring. 
+Since OpusMagnum depends on WIP’s members and methods, any update in WIP can unexpectedly impact OpusMagnum. 
+Moreover, inheritance exposes unnecessary details of WIP to OpusMagnum, violating encapsulation.
+
+-When composing with: 
