@@ -1,6 +1,0 @@
-The following issues arise:
-If WIP changes its internal members or methods, OpusMagnum might still break if it relies on specific functionality that changes.
-OpusMagnum depends directly on a concrete type WIP, meaning it cannot easily switch to another implementation if WIP is updated or replaced.
-
-
-To make the implementation as flexible as possible, we consider using an abstract interface like this:
