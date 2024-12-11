@@ -4,7 +4,7 @@ If WIP changes its internal structure or data members in future releases, OpusMa
 Since OpusMagnum depends on WIP’s members and methods, any update in WIP can unexpectedly impact OpusMagnum. 
 Moreover, inheritance exposes unnecessary details of WIP to OpusMagnum, violating encapsulation.
 
--When composing with:
+-When composing with: answer1
 class OpusMagnum
 {
     WIP d_wip;
@@ -15,7 +15,7 @@ If WIP changes its internal members or methods, OpusMagnum might still break if 
 OpusMagnum depends directly on a concrete type WIP, meaning it cannot easily switch to another implementation if WIP is updated or replaced.
 
 
-To make the implementation as flexible as possible, we consider using an abstract interface like this: 
+To make the implementation as flexible as possible, we consider using an abstract interface like this: answer2
 class IWIP  // Abstract interface
 {
 public:
@@ -44,4 +44,4 @@ public:
         d_wip->performTask();
     }
 };
-Advantages of this are: OpusMagnum depends only on IWIP, not WIP, reducing dependency risks, future implementations of IWIP won't break OpusMagnum and IWIP can be easily mocked or replaced in tests.
+Advantages of this are: OpusMagnum depends only on IWIP, not WIP, reducing dependency risks, future implementations of IWIP won't break OpusMagnum and IWIP can be easily mocked or replaced in tests. answer3
