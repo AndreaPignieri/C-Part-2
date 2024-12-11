@@ -1,0 +1,8 @@
+When implementing the Derived constructor we need to make sure that the Base 
+constructor is called. To do that we create a data member for derived of type 
+fstream. It can't be declared in the constructor, since it'll be destroyed
+at the end of the constructor and Base has a data member that is a reference 
+to an ostream. Using the Base constructor we initialise the data member of Base
+to be reference of the uninitialised member of Derived. Only after Base is
+contructed we initialise out pointing to the file "name", thus finishing the
+construction of derived.

@@ -1,0 +1,1 @@
+In this exercise we learn to satisfy the requirements needed by a base class constructor.

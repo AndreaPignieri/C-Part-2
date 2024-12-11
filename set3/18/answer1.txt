@@ -1,0 +1,9 @@
+Exercise 18
+*Design a class Base and a class Derived which inherits from Base,
+ both classes have a Default, Copy and Move constructor.
+ 
+*Change Derived's constructors so that they call the matching
+ Base constructor.
+  
+*How could you get Derived's copy constructor to call
+ Base's move, and vice versa?

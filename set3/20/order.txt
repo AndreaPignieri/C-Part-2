@@ -1,0 +1,4 @@
+descr.txt
+str.hh
+str.ih
+str2.cpp

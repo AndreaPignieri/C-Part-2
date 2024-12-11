@@ -1,0 +1,1 @@
+In this exercise we look into the std::strings as a base class and handling hiding members.

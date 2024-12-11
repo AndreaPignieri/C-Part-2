@@ -1,0 +1,15 @@
+There are many reasons that classify the usage of the class std::string as bad
+practise.
+
+- std::string can get changed resulting to a change on the derived class too, 
+which would later require modifications.
+
+- std::string doesn't have virtual destructors, if a string pointer to derived 
+was deleted the derived object would not be deleted properly and a leak might
+happen.
+
+-Finally, std::string represents a type, with inheritance we attempt to represent
+the relation of is-a. In the case of string a has-a relation is more likely and 
+has more advantages.
+
+For the above reasons composition is always preferred to inheritance.

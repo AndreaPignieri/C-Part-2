@@ -1,0 +1,11 @@
+To verify we check the output of main with the new constructor:
+
+Calling Derived Default:
+Base: Default Constructor.
+Calling Derived Copy:
+Base: Copy Constructor.
+Calling Derived Move:
+Base: Move Constructor.
+
+Clearly this behaves as we wanted it to.
+

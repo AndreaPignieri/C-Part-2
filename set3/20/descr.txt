@@ -1,0 +1,2 @@
+The purpose of this exercise is to make a wrapper of the string class and learn
+a proper application of inheritance

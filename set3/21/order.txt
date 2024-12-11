@@ -1,0 +1,5 @@
+descr.txt
+answer1.txt
+str.hh
+str.ih
+test.cpp
