@@ -25,5 +25,4 @@ void caller(Base &obj) {
 int main() {
     Derived d;
     caller(d);  // Pass Derived as Base reference
-    return 0;
 }
