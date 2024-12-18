@@ -1,0 +1,44 @@
+-What happens when you run the program?
+
+When the program run the terminal writes:
+
+>pure virtual method called
+>terminate called without an active exception
+>Aborted (core dumped)
+
+Which mean that a pure virtual function was called without the compiler being
+able to find the function overriding it or without that function being available
+to that object.
+_______________________________________________________________________________
+
+-Why does it happen?
+
+When constructing the object req, we create a new Derived object, for which the
+Base constructor needs to be called. At the Base constructor Base::prepare() is
+called, which in turn calls v_prepare(), a pure virtual function. But the derived
+object hasn't been fully constructed so there is no v_pointer pointing at the 
+correct Vtable. As a result the compiler tries to call Base::v_prepare which is 
+pure virtual, thus causing the termination of the program.
+_______________________________________________________________________________
+
+-How would you repair the program?
+
+The base constructor calls prepare() which causes the error. This kind of
+constructor can only be utilised if there is polymorphism with another class,
+so without ruining the construction of Base we can so the following changes:
+
+Derived::Derived()
+{
+   prepare();
+}
+
+Base::Base()
+{}
+//every derived struct from Base needs to call prepare() on the constructor
+
+This way prepare() is still called while constructing the Derived object, but
+only after the objects v_pointer points at the Vtable.
+
+In order to make the above change we also need to move prepare() from a private
+member function to a protected one.
+
