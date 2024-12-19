@@ -1,0 +1,2 @@
+Purpose: learn to construct an ostream class.
+Construct a BiStream class that provides the same facilities as the ostream class but inserting information on two files at the same time.

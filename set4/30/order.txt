@@ -1,0 +1,7 @@
+descr.txt
+BiStreamBuffer/BiStreamBuffer.ih
+BiStreamBuffer/BiStreamBuffer.hh
+BiStreamBuffer/BiStreamBuffer.cc
+BiStream/BiStream.ih
+BiStream/BiStream.hh
+BiStream/BiStream.cc

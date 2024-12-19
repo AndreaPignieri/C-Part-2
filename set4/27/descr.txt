@@ -1,0 +1,2 @@
+Purpose of this exercise: learn to use escalation.
+Write two classes Handler and Processor where the enum class Msg is only available to members of that class.
