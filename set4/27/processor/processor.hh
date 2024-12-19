@@ -1,6 +1,8 @@
 #ifndef PROCESSOR_HH
 #define PROCESSOR_HH
 
+#include "../base/base.hh"
+
 class Processor : public Base
 {
     public:
