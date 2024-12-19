@@ -9,6 +9,8 @@ When the program run the terminal writes:
 Which mean that a pure virtual function was called without the compiler being
 able to find the function overriding it or without that function being available
 to that object.
+
+
 _______________________________________________________________________________
 
 -Why does it happen?
@@ -19,6 +21,8 @@ called, which in turn calls v_prepare(), a pure virtual function. But the derive
 object hasn't been fully constructed so there is no v_pointer pointing at the 
 correct Vtable. As a result the compiler tries to call Base::v_prepare which is 
 pure virtual, thus causing the termination of the program.
+
+
 _______________________________________________________________________________
 
 -How would you repair the program?
