@@ -7,7 +7,7 @@ Base **derivedFactory(size_t size)
 
     for (size_t idx = 0; idx != size; ++idx)
         arr[idx] = new Derived();
-    //which pointers are pointing to Derived objects
+    //and the pointers are pointing to Derived objects
     
     return arr;
 }
