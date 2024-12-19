@@ -1,6 +1,11 @@
+#ifndef BASE_HH
+#define BASE_HH
+
 class Base
 {
-    protected:
+    //this class has no member function allowing access to protected
+    //so there can be no object base which uses the enum Msg
+    protected:   
         enum class Msg
         {
             NONE = 0,
@@ -16,16 +21,4 @@ class Base
         };
 };
 
-class Handler : public Base
-{
-    public:
-    // The enum class Msg is available for its members but not outside of this class
-        Msg message;    
-};
-
-class Processor : public Base
-{
-    public:
-    // The enum class Msg is available for its members but not outside of this class
-    Msg message;
-};
+#endif
