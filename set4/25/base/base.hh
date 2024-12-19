@@ -25,6 +25,8 @@ inline void Base::hello(std::ostream &out) const
 inline void Base::vHello(std::ostream &out) const
 {
     out << "hello from Base\n";
-}
+}//an exception can be made to the rule of no inline implementation 
+//to virtual members, since we know that vHello will be first called
+//by a Base object thus creating an adress for it at the Vtable
 
 #endif
