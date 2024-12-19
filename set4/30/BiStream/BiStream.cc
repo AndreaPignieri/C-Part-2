@@ -8,12 +8,14 @@ BiStream::BiStream(std::ofstream& file1, std::ofstream& file2)
 }
 BiStream& BiStream::operator<<(const char* data)
 {
+    //Use ostream with our custom buffer to write two multiple files
     output << data;
     return *this;
 }
 
 BiStream& BiStream::operator<<(std::ostream& (*manip)(std::ostream&))
 {
+    //Use ostream with our custom buffer to write two multiple files
     output << manip;
     return *this;
 }

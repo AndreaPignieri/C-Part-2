@@ -3,11 +3,12 @@
 BiStreamBuffer::BiStreamBuffer(std::ostream& out1, std::ostream& out2) 
         : buf1(out1.rdbuf()), buf2(out2.rdbuf())
 {
-    
+
 }
 
 int BiStreamBuffer::sync()
 {
+    // Use streambufs pubsync methods to flush
     if (buf1->pubsync() == 0 && buf2->pubsync() == 0)
     {
         return 0;
