@@ -1,0 +1,7 @@
+The program defines two Vtables, one for Base and one for Derived.
+Because Vtables are defined for each class and not for each object.
+On the other hand v_pointers are defined for each object. So there are 
+two v_pointers, one for base and one for derived. A reference, like br,
+does not create a new v_pointer it's just an alias for derived, so when
+vHello needs to be called the v_pointer of derived is used, which points
+to the Vtable of Derived, which has &Derived::vHello.

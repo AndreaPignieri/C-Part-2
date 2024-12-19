@@ -1,0 +1,1 @@
+Advantages of this are: OpusMagnum depends only on IWIP, not WIP, reducing dependency risks, future implementations of IWIP won't break OpusMagnum and IWIP can be easily mocked or replaced in tests.

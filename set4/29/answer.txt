@@ -1,0 +1,86 @@
+-Draw Multi's class hierarchy
+
+
+       Basic
+      /     \
+   Deriv1   Deriv2
+       \     /
+        Multi
+
+
+_______________________________________________________________________________
+
+-Add the following statement to Multi's constructor:
+
+
+cout << static_cast<Basic *>(this) << '\n';
+
+Error:
+multi/multi.hh:15:43: error: ‘Basic’ is an ambiguous base of ‘Multi’
+   15 |     std::cout << static_cast<Basic *>(this) << '\n';    
+    
+Explain the compiler's error message:
+
+
+Basic is the base of Multi twice, because both Deriv classes have Basic as a base.
+So there are two different paths in the class hierarchy causing the ambiguity.
+
+
+_______________________________________________________________________________
+
+-Change the statement so that there is no compilation error (there are two almost
+identical ways of doing so. Show both ways and explain the difference between both)
+
+1)    
+
+std::cout << static_cast<Basic *>(static_cast<Deriv1 *>(this)) << '\n';
+
+2)
+
+std::cout << static_cast<Basic *>(static_cast<Deriv2 *>(this)) << '\n';
+
+In both of the above ways the idea is the same, we explicitly give the path to
+Basic, from Deriv1 or Deriv2 respectively in (1) and (2)
+
+
+______________________________________________________________________________
+
+-Keep the statement as-is, and show the required modifications to allow the
+compiler to compile the statement without errors.
+
+
+Change the inheritance of Deriv1, Deriv2 to:
+
+class Deriv1 : virtual public Basic
+{};
+
+class Deriv2 : virtual public Basic
+{};
+
+
+_______________________________________________________________________________
+
+-After solving the previous item, how do you realize that the 2nd Basic 
+constructor (i.e., the one expecting an int) is the only Basic constructor that's
+called?
+
+
+When using virtual inheritance, the Basic constructor is called by default and 
+then the constructors of Deriv1 and Deriv2 are called. This can be avoided by
+explicitly calling the Basic(int) constructor on the initialization list of the
+Multi constructor. This way the Basic(int) constructor is the only one called.
+
+
+_______________________________________________________________________________
+
+-Also, after having prevented compilation errors: also make sure that Deriv1's 
+constructor calls Base's constructor expecting an int. What do you have to change 
+to ensure that only Base's default constructor is called when constructing a Multi 
+object?
+
+
+
+If Deriv1 virtually inherits Basic, it doesn't matter if the Basic(int) constructor 
+is explicitly called by Deriv1's default constructor. As long as Multi constructor
+doesn't explicitly call Basic(1) the default Basic constructor will be the only
+one called.
