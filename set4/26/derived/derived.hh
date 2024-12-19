@@ -3,7 +3,6 @@
 
 #include "../base/base.hh"
 #include <fstream>
-#include <iostream>
 
 Base **derivedFactory(size_t size);
 
@@ -39,7 +38,7 @@ inline Derived::Derived(std::string text)
 
 inline void *Derived::operator new(size_t size)
 {
-    std::cout<<"we making derived obj\n";
+    std::cout<<"making derived obj\n";
     return ::operator new(size);
 }
 
