@@ -1,0 +1,4 @@
+Exercise 35
+*Consider given class strings from ex.8. Simplify the class by changing the
+ data type to a pointer to an array of strings and removing superflous
+ members. Submit the modified class:
