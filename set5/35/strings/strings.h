@@ -53,12 +53,12 @@ inline void Strings::reserve(size_t newCap)
 
 inline std::string const &Strings::operator[](size_t idx) const
 {
-    return d_str[idx]
+    return d_str[idx];
 }
 
 inline std::string &Strings::operator[](size_t idx)
 {
-    return d_str[idx]
+    return d_str[idx];
 }
 #endif
 
