@@ -1,1 +1,1 @@
-Summary
+Summary: Managing blocks of text read from a stream using a class without direct data storage
