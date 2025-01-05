@@ -1,0 +1,5 @@
+Exercise 36
+*Consider again given class strings from ex.8. Simplify the class as in
+ the previous exercise but keep the requirement that the strings themselves
+ are reached via pointers. In addition provide implementation of operator[]
+ and ensure COW is handled correctly. Submit the modified class:

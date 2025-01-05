@@ -1,0 +1,1 @@
+Summary: Shedding excess capacity from a vector

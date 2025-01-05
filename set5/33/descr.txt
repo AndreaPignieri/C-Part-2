@@ -1,1 +1,1 @@
-Summary: Learn to use containers to solve complex problems, write a program that writes all unique words appearing in a list sorted 
+Summary: Learn to use containers to solve complex problems, write a program that writes all unique words appearing in a list sorted

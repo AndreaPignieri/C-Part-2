@@ -1,0 +1,6 @@
+#include "strings.h"
+#include <stdexcept>
+#include <cstring>          // memcpy
+
+using namespace std;
+

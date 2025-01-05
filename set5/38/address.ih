@@ -1,0 +1,11 @@
+#include "address.hh"
+#include <string>
+#include <functional>
+#include <iostream>
+#include <set>
+#include <unordered_map>
+#include <vector>
+
+using namespace std;
+using setItSS = set<pair<string,string>>::iterator;  
+using umapItSSV = unordered_map<pair<string,string>, vector<string>, hashPair>::iterator;

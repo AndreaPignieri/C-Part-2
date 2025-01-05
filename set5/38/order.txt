@@ -1,0 +1,12 @@
+descr.txt
+address.hh
+address.ih
+hashPair.cpp
+insertFrom.cpp
+addAddress.cpp
+personExist.cpp
+insertInto.cpp
+remove.cpp
+fillSet.cpp
+stopCode.cpp
+eligible.cpp
