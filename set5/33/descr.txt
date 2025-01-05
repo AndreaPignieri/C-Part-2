@@ -1,1 +1,1 @@
-
+Purpose: Use the correct container to print a list of words.
