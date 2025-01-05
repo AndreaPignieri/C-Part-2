@@ -1,0 +1,8 @@
+descr.txt
+symtab/symtab.h
+symtab/symtab.ih
+symtab/constOp[].cc
+symtab/op[].cc
+symtab/opPar.cc
+symtab/opPar2.cc
+symtab/insert.cc
