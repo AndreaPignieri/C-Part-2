@@ -1,4 +1,4 @@
-#include "word_store.h"
+#include "../WordStore/word_store.h"
 
 void WordStore::shedExcessCapacity()
 {
