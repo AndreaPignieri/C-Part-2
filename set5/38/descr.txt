@@ -1,0 +1,1 @@
+Purpose: Creating a class that stores and deletes addresses
