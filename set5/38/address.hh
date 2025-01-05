@@ -39,10 +39,10 @@ class Address
                         std::pair<std::string, std::string> &info);
 
         void fillSet(std::set<std::pair<std::string, std::string>> &postCodeSet);
-        std::string stopCode(std::string const postalCode);
+        std::string stopCode(std::string const postalCode) const;
         bool eligible( std::set<std::pair<std::string,std::string>>::iterator const &idx, 
                         std::set<std::pair<std::string,std::string>>::iterator const &stop,
-                        std::set<std::pair<std::string, std::string>> const &KeySet );
+                        std::set<std::pair<std::string, std::string>> const &KeySet ) const;
 
 };
 
