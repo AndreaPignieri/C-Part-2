@@ -3,5 +3,5 @@
 void print(set<string> &words)
 {
     for (iteratorSet idx = words.begin(); idx != words.end(); ++idx)
-        cout << *idx << '\n';
+        cout << *idx << '\n';   //print the words
 }
