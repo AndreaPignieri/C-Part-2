@@ -2,7 +2,7 @@
 
 int main()
 {
-    set <string> words;
+    set <string> words;  //will sort them automatically
     while(cin)
     {
         string input;
