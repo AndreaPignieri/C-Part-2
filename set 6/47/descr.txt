@@ -1,0 +1,4 @@
+47
+Construct a program defining a vector<unsigned> having 10 
+elements, use iota to fill it with even values between 
+0 and 18.

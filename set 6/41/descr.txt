@@ -1,0 +1,4 @@
+41
+Write a program that fills a vector with random numbers with the range
+and amount specified by arguments. The program makes use of user defined
+classes Random and FillUnique.
