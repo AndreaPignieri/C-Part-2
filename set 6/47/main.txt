@@ -1,0 +1,27 @@
+// The question was quite ambigious abou what you wanted us 
+// to use and what not. Even thoughh the submitted one is a better
+//implementation of the problem we weren't sure if it was considered 
+//enough outside the box. This is the implementation without making a type
+
+
+#include <iostream>
+#include <vector>
+#include <numeric>
+
+using namespace std;
+
+int main()
+{
+    vector<unsigned> vecU(10);
+    
+    iota(vecU.begin(), vecU.end(), 0);
+
+    for (auto it = ++vecU.begin(); it != vecU.end(); ++it)
+        iota(it, vecU.end(), ++(*it));//increments in a repeatedly smaller range
+    //the increment iterator is used to increase the value of the pointed to element as well
+
+    for (auto &even : vecU)
+        cout << even << ", ";
+
+    cout << '\n';
+}
