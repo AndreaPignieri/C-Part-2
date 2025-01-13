@@ -1,0 +1,12 @@
+descr.txt
+student/student.hh
+student/student.ih
+student/operatorIn.cpp
+student/setUp.cpp
+student/operatorComp.cpp
+student/operatorOut.cpp
+main.ih
+read.cpp
+writeNames.cpp
+writeNrs.cpp
+main.cpp
