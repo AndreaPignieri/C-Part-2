@@ -1,3 +1,3 @@
 Set: Set 6
-Authors: Odhran McAuley, Stelios Chatzivies, Bogdan-Gabriel Ivancu, Andrea Pignieri
+Authors: Odhran McAuley, Stelios Chatzivies, Andrea Pignieri
 Rater:
