@@ -1,0 +1,1 @@
+Purpose: STL generic algorithms with basic data types and according promotions

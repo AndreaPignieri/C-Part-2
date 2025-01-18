@@ -1,3 +1,9 @@
 descr.txt
+utils/read_unique_words.h
+utils/read_unique_words.cpp
+wordstore/word_store.h
+wordstore/add_word.cpp
+wordstore/get_size.cpp
+wordstore/read_from_file.cpp
+wordstore/shed_excess_capacity.cpp
 main.cpp
-word_store.h

@@ -1,0 +1,12 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <iterator>
+#include "student/student.hh"
+#include <numeric>
+
+using namespace std;
+void read(string const fileName, vector<Student> &students);
+void writeNames(ostream &out, vector<Student> &students);
+void writeNrs(ostream &out, vector<Student> const &students);

@@ -1,0 +1,1 @@
+Purpose: identifying repeating elements in a vector

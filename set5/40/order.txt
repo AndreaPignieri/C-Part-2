@@ -1,0 +1,9 @@
+descr.txt
+utils/read_lines_from_stream.h
+utils/read_lines_from_stream.cpp
+lines/lines.h
+lines/lines_constructor.cpp
+lines/lines_destructor.cpp
+lines/lines_get_by_idx.cpp
+lines/lines_get.cpp
+main.cpp
