@@ -1,6 +1,0 @@
-descr.txt
-main.ih
-functions.hh
-erastothenes.cc
-loading.cc
-main.cc

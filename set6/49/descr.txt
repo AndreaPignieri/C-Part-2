@@ -1,1 +1,0 @@
-Purpose: apply basic multi threading. Create a thread that prints a dot each second while primes are calculated, then print initial and ending time and elapsed seconds.

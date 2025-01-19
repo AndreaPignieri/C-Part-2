@@ -1,0 +1,5 @@
+exercise 56
+Design a class Task to count characters in a file based on a given property
+provided by a bool function. Design a class TaskThreads which passes task
+objects to threads and performs them either paralell or sequentially based
+on the number of arguments.

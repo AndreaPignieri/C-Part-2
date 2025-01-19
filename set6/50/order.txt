@@ -1,4 +1,0 @@
-descr.txt
-main.ih
-durationcast.hh
-main.cc

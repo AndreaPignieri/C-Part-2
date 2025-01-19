@@ -1,5 +1,0 @@
-descr.txt
-main.ih
-functions.hh
-getDurationToAdd.cc
-main.cc

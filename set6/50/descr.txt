@@ -1,1 +1,0 @@
-Purpose: learn to do time conversions. Convert hours into minutes and seconds into minutes.
