@@ -1,0 +1,1 @@
+Purpose: create a customer, supplier programme with multiple customers and using polling

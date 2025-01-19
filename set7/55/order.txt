@@ -1,0 +1,12 @@
+descr.txt
+storage/storage.hh
+storage/storage.ih
+storage/define.cpp
+storage/newThread.cpp
+storage/write.cpp
+storage/empty.cpp
+storage/front.cpp
+storage/push.cpp
+main.ih
+createThreads.cpp
+main.cpp

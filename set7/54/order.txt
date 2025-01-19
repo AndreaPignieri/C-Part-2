@@ -1,0 +1,10 @@
+descr.txt
+storage/storage.hh
+storage/storage.ih
+storage/mutex.cpp
+storage/newThread.cpp
+storage/write.cpp
+storage/empty.cpp
+storage/push.cpp
+main.ih
+main.cpp
