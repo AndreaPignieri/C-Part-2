@@ -1,0 +1,1 @@
+Purpose: Output a text from different threads, once in blocks and once tangled.
