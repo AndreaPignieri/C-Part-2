@@ -1,0 +1,22 @@
+#ifndef MAIN_IH
+#define MAIN_IH
+
+#include <iostream>
+#include <fstream>
+#include <thread>
+#include <string>
+#include <stdexcept>
+
+using namespace std;
+
+class Handler
+{
+    public:
+        Handler();
+        void shift(std::ostream &out, std::string const &text);
+};
+
+void objectinmain(const string &filename, const string &input);
+void objectinthread(const string &filename, const string &input);
+
+#endif

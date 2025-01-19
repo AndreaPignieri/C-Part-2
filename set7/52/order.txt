@@ -1,0 +1,5 @@
+descr.txt
+main.ih
+objectinmain.cc
+objectinthread.cc
+main.cc

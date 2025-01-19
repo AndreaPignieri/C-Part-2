@@ -1,0 +1,5 @@
+Exercise 52
+Write program that expects name of file and text, open file and run a thread
+calling a class Handler shift member. Do this first by defining an object then
+passing to a thread and secondly by by running a thread that defines a Handler
+object.
