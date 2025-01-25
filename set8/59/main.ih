@@ -1,0 +1,7 @@
+#include <vector>
+#include <future>
+#include <algorithm>
+#include <iostream>
+
+using namespace std;
+void Qsort(int *beg, int *end);
