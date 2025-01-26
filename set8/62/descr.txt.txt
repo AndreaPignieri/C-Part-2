@@ -1,0 +1,9 @@
+Exercise 62
+
+Design a program that compiles a list of sourde files concurrently, using all the cores your computer has.
+If a compilation fails, then running compilations may end and sources waiting to be compiled are not considered. 
+Once a compilation fails only the error-output of that compilation must be shown.
+
+Your program should also offer an option allowing users to specify the number of compilation threads to use. 
+The minimum number of compilation threads must be 1: if 0 is specified, 1 is silently used. 
+Another option specifies a directory where temporary files are stored. This directory may not yet exist, and must be removed when the program ends. 
