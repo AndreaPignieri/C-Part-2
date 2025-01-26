@@ -1,0 +1,79 @@
+main:
+From main() ArgParser is called which returns size_t number of threads and const std::string
+temp file directory. If no number of threads is specified the max is chosen from no. of cores.
+Then a CompManager object is initialized with number of threads and temp file directory.
+
+CompilationManager:
+This class initializes TempManager object to create a temp file directory which is deleted
+when the destructor is called. Then it initializes GetFile which finds and stores the source file 
+paths. Then it initializes a ThreadPool object that with worker threads to perform the tasks in
+TaskQueue which is initialized with CompilationTask objects. CompilationManager has a member 
+errorHandle() which is used to clean-up and end the program appropriately if an error is caught.
+
+CompilationTask:
+Calls the compiler for a given source file.
+
+TaskQueue:
+Store CompilationTask objects in a thread-safe queue using a mutex and condition_variable
+to synchronize access.
+
+ThreadPool:
+Pool of given number of threads executing tasks from TaskQueue.
+
+If no exceptions are thrown all threads are closed and the program terminates normally. If an exception
+is thrown, then running compilations end and sources waiting to be compiled are not considered. 
+Once a compilation fails only the error-output of that compilation is shown and clean-up is handled
+by errorHandle().
+
+Data Structures:
+
+std::string source_file;  // Path to the source file (e.g., "src/main.cpp")
+std::string output_path;  // Temp directory path for intermediate files
+std::string command;      // Full compiler command
+std::queue<CompilationTask> tasks; // Underlying queue
+std::mutex mtx;                    // Guards access to the queue
+std::condition_variable cv;        // Signals workers when tasks are available
+std::vector<std::thread> workers;  // Worker threads
+std::vector<std::string> source_files; // List of files to compile
+std::atomic<bool> failure_flag{false}; //flag to indicate failure
+std::string error_message; // Stores compiler error output
+std::mutex error_mutex;    // Guards access to error_message
+std::filesystem::path temp_dir; // Path to temp directory
+
+Synchronization:
+Note we did not use a semaphore as the number of active workers is already decided when the user 
+specifies the number of threads (or is decided by the program) and this remains fixed, thus ThreadPool
+is implemented instead.
+In TaskQueue:
+A std::queue<CompilationTask> is guarded by a std::mutex, a std::condition_variable 
+signals worker threads when tasks are available or when the program has to terminate.
+
+In ThreadPool:
+The ThreadPool destructor joins all worker threads.
+
+In TempManager:
+Temp file directory deleted by destructor.
+
+On Failure:
+failure_flag is set to True, all workers all called through a notify_all(), then terminate when
+checking the failure_flag. The first thread to fail writes its error message which is then locked
+by a mutex.
+                       
+        
+Class Hierarchy:
+
+                
+              TaskQueue
+                  | 
+         +--------+              
+         |        |        GetFile   TempManager
+         |    ThreadPool     |          |
+         |        |          |          |
+         +----CompManager----+----------+               
+                  |           ArgParser
+                  |               |
+                  +-------+-------+
+                          |
+                         main
+
+           
