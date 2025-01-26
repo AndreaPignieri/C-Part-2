@@ -1,5 +1,0 @@
-#include "workforce.hh"
-#include <algorithm>
-#include <iostream>
-
-using namespace std;
