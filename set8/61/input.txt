@@ -1,0 +1,4 @@
+This is an exercise,
+to reverse the characters
+from different lines.
+sseccuS
