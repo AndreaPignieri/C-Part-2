@@ -1,18 +1,18 @@
-#ifndef INCLUDED_SEMAPHORE_
-#define INCLUDED_SEMAPHORE_
+#ifndef INCLUDED_SEMAPHORE_HH
+#define INCLUDED_SEMAPHORE_HH
 #include <mutex>
 #include <atomic>
 #include <condition_variable>
 
 class Semaphore
 {
-    mutable std::mutex d_mutx;
+    mutable std::mutex d_mutex;
     std::condition_variable d_cond;
     std::atomic<size_t> d_available;
 
     public:
         Semaphore(size_t nAvailable);
-        
+        Semaphore();
         void wait();
         void notify_all();
         void notify();
@@ -23,7 +23,7 @@ class Semaphore
 };
    
 
-inline Sephemore::Semaphore(size_t nAvailable)
+inline Semaphore::Semaphore(size_t nAvailable)
 :
     d_available(nAvailable)
 {}

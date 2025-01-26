@@ -1,0 +1,8 @@
+descr.txt
+semaphore/semaphore.ih
+semaphore/semaphore.hh
+semaphore/set.cc
+semaphore/wait.cc
+semaphore/waitfor.cc
+main2.ih
+main2.cc

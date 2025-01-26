@@ -1,6 +1,4 @@
-#include "semaphore.h"
+#include "semaphore.hh"
 #include <chrono>
 
-
 using namespace std;
-

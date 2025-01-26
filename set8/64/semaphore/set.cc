@@ -6,5 +6,3 @@ void Semaphore::set(size_t nAvailable)
     d_available.store(nAvailable);
     d_cond.notify_all();         //all waiting threads notified
 }
-
-

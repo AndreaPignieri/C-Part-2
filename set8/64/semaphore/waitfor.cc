@@ -1,4 +1,4 @@
-#include "sephamore.ih"
+#include "semaphore.ih"
 
 bool Semaphore::wait_for(size_t seconds)
 {

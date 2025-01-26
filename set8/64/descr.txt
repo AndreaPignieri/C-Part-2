@@ -1,0 +1,1 @@
+Purpose: learn to end threads and programs run by your program
