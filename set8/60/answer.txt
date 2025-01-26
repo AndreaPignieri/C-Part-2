@@ -1,0 +1,7 @@
+If we run multiple threads for which we want to be checking if they request the program to end,
+we would add a vector of shared_futures each thread would return its value to one of the entries 
+of the vector. Then we would add one more thread, checking, that would take as argument the 
+reference to the vector of shared futures and check in a loop each future if it had returned and 
+if it requested the end of the program. Once a future had returned with "end the program", checking
+would return similarly to a future that would be checked by the main thread the same way it is checked
+on the single thread example.
