@@ -1,7 +1,4 @@
-#include "workforce/workforce.hh"
-#include <iostream>
-
-using namespace std;
+#include "main.ih"
 
 int main(int argc, char **argv)
 try
