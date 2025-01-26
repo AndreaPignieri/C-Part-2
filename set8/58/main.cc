@@ -3,30 +3,33 @@
 #include <numeric>
 #include <thread>
 
+using namespace std;
+
+enum {
+    lhsRows = 3,
+    lhsCols = 4,
+    rhsTRows = 4,
+    rhsTCols = 5
+};
+
 double innerProduct(double* const lhs, double* const rhs, int size) {
-    return std::inner_product(lhs, lhs + size, rhs, 0.0);
+    return inner_product(lhs, lhs + size, rhs, 0.0);
 }
 
 int main() {
-    using namespace std;
-
-    const int lhsRows = 4;
-    const int lhsCols = 5;
-    const int rhsTRows = 6;
-    const int rhsTCols = 5;
-
+    
     double lhs[lhsRows][lhsCols];
     double rhsT[rhsTRows][rhsTCols];
 
     // Fill the matrices with values
-    for (int rowIdx = 0; rowIdx < lhsRows; ++rowIdx) {
-        for (int colIdx = 0; colIdx < lhsCols; ++colIdx) {
+    for (size_t rowIdx = 0; rowIdx < lhsRows; ++rowIdx) {
+        for (size_t colIdx = 0; colIdx < lhsCols; ++colIdx) {
             lhs[rowIdx][colIdx] = rowIdx + colIdx + 1;
         }
     }
 
-    for (int rowIdx = 0; rowIdx < rhsTRows; ++rowIdx) {
-        for (int colIdx = 0; colIdx < rhsTCols; ++colIdx) {
+    for (size_t rowIdx = 0; rowIdx < rhsTRows; ++rowIdx) {
+        for (size_t colIdx = 0; colIdx < rhsTCols; ++colIdx) {
             rhsT[rowIdx][colIdx] = rowIdx + colIdx + 2;
         }
     }
@@ -34,8 +37,8 @@ int main() {
     future<double> fut[lhsRows][rhsTRows]; // Array to hold futures
 
     // Start tasks in detached threads
-    for (int rowIdx = 0; rowIdx < lhsRows; ++rowIdx) {
-        for (int colIdx = 0; colIdx < rhsTRows; ++colIdx) {
+    for (size_t rowIdx = 0; rowIdx < lhsRows; ++rowIdx) {
+        for (size_t colIdx = 0; colIdx < rhsTRows; ++colIdx) {
             // Create a new packaged_task for each computation
             packaged_task<double(double*, double*, int)> task(innerProduct);
             fut[rowIdx][colIdx] = task.get_future();
@@ -46,8 +49,8 @@ int main() {
     }
 
     // Retrieve and display the results
-    for (int rowIdx = 0; rowIdx < lhsRows; ++rowIdx) {
-        for (int colIdx = 0; colIdx < rhsTRows; ++colIdx) {
+    for (size_t rowIdx = 0; rowIdx < lhsRows; ++rowIdx) {
+        for (size_t colIdx = 0; colIdx < rhsTRows; ++colIdx) {
             cout << fut[rowIdx][colIdx].get() << " ";
         }
         cout << "\n";
