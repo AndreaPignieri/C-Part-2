@@ -1,0 +1,10 @@
+#include <string>
+#include <iostream>
+#include <unistd.h>
+#include <signal.h>
+#include <cstdlib>
+#include "../fork/fork.hh"
+#include "../semaphore/semaphore.hh"
+#include "linePrinterFork.hh"
+
+using namespace std;

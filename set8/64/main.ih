@@ -1,0 +1,10 @@
+#include <iostream>
+#include <string>
+#include <thread>
+#include <chrono>
+#include <csignal>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <unistd.h>
+#include "semaphore/semaphore.hh"
+#include "linePrinterFork/linePrinterFork.hh"
