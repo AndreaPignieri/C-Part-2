@@ -5,18 +5,21 @@
 
 using namespace std;
 
-enum {
+enum 
+{
     lhsRows = 3,
     lhsCols = 4,
     rhsTRows = 4,
     rhsTCols = 5
 };
 
-double innerProduct(double* const lhs, double* const rhs, int size) {
+double innerProduct(double* const lhs, double* const rhs, int size) 
+{
     return inner_product(lhs, lhs + size, rhs, 0.0);
 }
 
-int main() {
+int main() 
+{
     
     double lhs[lhsRows][lhsCols];
     double rhsT[rhsTRows][rhsTCols];
