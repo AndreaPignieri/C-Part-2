@@ -13,7 +13,7 @@ enum
     rhsTCols = 5
 };
 
-double innerProduct(double* const lhs, double* const rhs, int size) 
+double innerProduct(double* const lhs, double* const rhs, size_t size) 
 {
     return inner_product(lhs, lhs + size, rhs, 0.0);
 }
@@ -25,24 +25,24 @@ int main()
     double rhsT[rhsTRows][rhsTCols];
 
     // Fill the matrices with values
-    for (size_t rowIdx = 0; rowIdx < lhsRows; ++rowIdx) 
+    for (size_t rowIdx = 0; rowIdx != lhsRows; ++rowIdx) 
     {
-        for (size_t colIdx = 0; colIdx < lhsCols; ++colIdx)
+        for (size_t colIdx = 0; colIdx != lhsCols; ++colIdx)
             lhs[rowIdx][colIdx] = rowIdx + colIdx + 1;
     }
 
-    for (size_t rowIdx = 0; rowIdx < rhsTRows; ++rowIdx) 
+    for (size_t rowIdx = 0; rowIdx != rhsTRows; ++rowIdx) 
     {
-        for (size_t colIdx = 0; colIdx < rhsTCols; ++colIdx)
+        for (size_t colIdx = 0; colIdx != rhsTCols; ++colIdx)
             rhsT[rowIdx][colIdx] = rowIdx + colIdx + 2;
     }
 
     future<double> fut[lhsRows][rhsTRows]; // Array to hold futures
 
     // Start tasks in detached threads
-    for (size_t rowIdx = 0; rowIdx < lhsRows; ++rowIdx) 
+    for (size_t rowIdx = 0; rowIdx != lhsRows; ++rowIdx) 
     {
-        for (size_t colIdx = 0; colIdx < rhsTRows; ++colIdx) 
+        for (size_t colIdx = 0; colIdx != rhsTRows; ++colIdx) 
         {
             // Create a new packaged_task for each computation
             packaged_task<double(double*, double*, int)> task(innerProduct);
@@ -54,8 +54,8 @@ int main()
     }
 
     // Retrieve and display the results
-    for (size_t rowIdx = 0; rowIdx < lhsRows; ++rowIdx) {
-        for (size_t colIdx = 0; colIdx < rhsTRows; ++colIdx) 
+    for (size_t rowIdx = 0; rowIdx != lhsRows; ++rowIdx) {
+        for (size_t colIdx = 0; colIdx != rhsTRows; ++colIdx) 
             cout << fut[rowIdx][colIdx].get() << " ";
         cout << "\n";
     }
