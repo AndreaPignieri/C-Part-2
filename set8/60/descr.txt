@@ -1,0 +1,1 @@
+Purpose: Inspect a future statement from within a loop
