@@ -28,7 +28,7 @@ int main()
 
         if (future.wait_until(chrono::steady_clock::now()) == future_status::ready)
         {
-            if (future.get() == "end the program")   //not add??
+            if (future.get() == "end the program")   //the returned value indicates to end the program
                 break;
         }
 
