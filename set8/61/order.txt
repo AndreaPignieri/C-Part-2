@@ -1,0 +1,13 @@
+descr.txt
+workforce/workforce.hh
+workforce/workforce.ih
+workforce/run2.cpp
+workforce/run.cpp
+workforce/process.cpp
+workforce/task.cpp
+workforce/another.cpp
+workforce/write.cpp
+main.ih
+main.cpp
+input.txt
+output.txt
