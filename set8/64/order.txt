@@ -4,6 +4,9 @@ semaphore/semaphore.hh
 semaphore/set.cc
 semaphore/wait.cc
 semaphore/waitfor.cc
+semaphore/notify.cc
+semaphore/notify_all.cc
+semaphore/semaphore.cc
 linePrinterFork/linePrinterFork.ih
 linePrinterFork/linePrinterFork.hh
 linePrinterFork/linePrinterForkDes.cc
