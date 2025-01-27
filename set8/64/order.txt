@@ -6,6 +6,7 @@ semaphore/wait.cc
 semaphore/waitfor.cc
 linePrinterFork/linePrinterFork.ih
 linePrinterFork/linePrinterFork.hh
+linePrinterFork/linePrinterForkDes.cc
 linePrinterFork/childRedirections.cc
 linePrinterFork/childProcess.cc
 linePrinterFork/parentProcess.cc
