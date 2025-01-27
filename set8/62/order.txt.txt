@@ -1,2 +1,0 @@
-descr.txt
-answers.txt
