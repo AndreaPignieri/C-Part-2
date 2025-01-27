@@ -1,0 +1,1 @@
+fork/forkDes.cc.o: fork/forkDes.cc fork/fork.ih fork/fork.hh

@@ -1,0 +1,3 @@
+main.cc.o: main.cc main.ih semaphore/semaphore.hh \
+ linePrinterFork/linePrinterFork.hh linePrinterFork/../fork/fork.hh \
+ linePrinterFork/../semaphore/semaphore.hh

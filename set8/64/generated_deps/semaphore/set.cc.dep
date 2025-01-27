@@ -1,0 +1,2 @@
+semaphore/set.cc.o: semaphore/set.cc semaphore/semaphore.ih \
+ semaphore/semaphore.hh

@@ -1,0 +1,2 @@
+semaphore/semaphore.cc.o: semaphore/semaphore.cc semaphore/semaphore.ih \
+ semaphore/semaphore.hh

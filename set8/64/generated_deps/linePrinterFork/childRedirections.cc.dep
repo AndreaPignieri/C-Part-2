@@ -1,0 +1,5 @@
+linePrinterFork/childRedirections.cc.o: \
+ linePrinterFork/childRedirections.cc linePrinterFork/linePrinterFork.ih \
+ linePrinterFork/../fork/fork.hh \
+ linePrinterFork/../semaphore/semaphore.hh \
+ linePrinterFork/linePrinterFork.hh

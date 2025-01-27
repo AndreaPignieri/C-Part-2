@@ -1,0 +1,2 @@
+fork/childRedirections.cc.o: fork/childRedirections.cc fork/fork.ih \
+ fork/fork.hh

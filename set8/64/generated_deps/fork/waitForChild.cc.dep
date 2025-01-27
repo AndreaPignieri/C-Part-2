@@ -1,0 +1,1 @@
+fork/waitForChild.cc.o: fork/waitForChild.cc fork/fork.ih fork/fork.hh

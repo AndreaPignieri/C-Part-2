@@ -1,0 +1,2 @@
+semaphore/waitfor.cc.o: semaphore/waitfor.cc semaphore/semaphore.ih \
+ semaphore/semaphore.hh

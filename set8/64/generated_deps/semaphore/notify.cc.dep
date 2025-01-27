@@ -1,0 +1,2 @@
+semaphore/notify.cc.o: semaphore/notify.cc semaphore/semaphore.ih \
+ semaphore/semaphore.hh

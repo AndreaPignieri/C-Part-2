@@ -1,0 +1,4 @@
+linePrinterFork/linePrinterFork.ih.gch: \
+ linePrinterFork/linePrinterFork.ih linePrinterFork/../fork/fork.hh \
+ linePrinterFork/../semaphore/semaphore.hh \
+ linePrinterFork/linePrinterFork.hh
